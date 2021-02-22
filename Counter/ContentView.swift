@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct ContentView: View {
     @State var count: Int
@@ -14,7 +15,13 @@ struct ContentView: View {
         VStack {
             Text(String(count))
                 .padding()
-            Button("+", action: { count += 1 })
+                .font(.headline)
+                .foregroundColor(Color.Neumorphic.secondary)
+                
+            Button(action: { count += 1 }) {
+                Text("+").fontWeight(.bold)
+            }
+            .softButtonStyle(Circle())
         }
     }
 }

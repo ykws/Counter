@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		08E4581725E3986100B3BAC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08E4581625E3986100B3BAC8 /* Preview Assets.xcassets */; };
 		08E4582225E3986100B3BAC8 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E4582125E3986100B3BAC8 /* CounterTests.swift */; };
 		08E4582D25E3986100B3BAC8 /* CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E4582C25E3986100B3BAC8 /* CounterUITests.swift */; };
+		08E879BA25E4327500EE6FE0 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 08E879B925E4327500EE6FE0 /* Neumorphic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E879BA25E4327500EE6FE0 /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,9 @@
 			dependencies = (
 			);
 			name = Counter;
+			packageProductDependencies = (
+				08E879B925E4327500EE6FE0 /* Neumorphic */,
+			);
 			productName = Counter;
 			productReference = 08E4580C25E3985E00B3BAC8 /* Counter.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +222,9 @@
 				Base,
 			);
 			mainGroup = 08E4580325E3985D00B3BAC8;
+			packageReferences = (
+				08E879B825E4327500EE6FE0 /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = 08E4580D25E3985E00B3BAC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -580,6 +588,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08E879B825E4327500EE6FE0 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08E879B925E4327500EE6FE0 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08E879B825E4327500EE6FE0 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08E4580425E3985D00B3BAC8 /* Project object */;
 }
