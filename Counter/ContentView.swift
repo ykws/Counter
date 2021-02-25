@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Neumorphic
+import FirebaseFirestore
 
 struct ContentView: View {
     @State var count: Int
@@ -17,11 +18,27 @@ struct ContentView: View {
                 .padding()
                 .font(.headline)
                 .foregroundColor(Color.Neumorphic.secondary)
-                
+
             Button(action: { count += 1 }) {
                 Text("+").fontWeight(.bold)
             }
             .softButtonStyle(Circle())
+        }
+        .onAppear {
+            loadData()
+        }
+    }
+    
+    func loadData() {
+        let db = Firestore.firestore()
+        db.collection("counters").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                let document = querySnapshot!.documents.first
+                let data = document?.data()
+                count = data?["count"] as! Int
+            }
         }
     }
 }
